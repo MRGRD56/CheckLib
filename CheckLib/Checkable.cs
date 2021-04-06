@@ -36,10 +36,14 @@ namespace CheckLib
 
         public Checkable() { }
 
-        public Checkable(T item, bool isChecked = false)
+        public Checkable(T item, bool isChecked = false, OnCheckedEventHandler onChecked = null)
         {
             Item = item;
             IsChecked = isChecked;
+            if (onChecked != null)
+            {
+                OnChecked += onChecked;
+            }
         }
     }
 }
