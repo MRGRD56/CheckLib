@@ -5,8 +5,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>MRGRD56</Authors>
     <Company>MRGRD56</Company>
-    <PackageTags>library, collections, checkbox, C#, csharp</PackageTags>
-    <Version>1.0.2</Version>
+    <PackageTags>library, collections, checkbox, radiobutton, C#, csharp</PackageTags>
+    <Version>1.0.3</Version>
     <RepositoryUrl>https://github.com/MRGRD56/CheckLib</RepositoryUrl>
     <PackageProjectUrl>https://github.com/MRGRD56/CheckLib</PackageProjectUrl>
   </PropertyGroup>

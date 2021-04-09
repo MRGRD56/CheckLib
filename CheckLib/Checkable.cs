@@ -23,11 +23,11 @@ namespace CheckLib
                 if (value == _isChecked) return;
                 _isChecked = value;
                 OnPropertyChanged();
-                OnChecked?.Invoke(value);
+                OnChecked?.Invoke(this, new OnCheckedEventArgs(value));
             }
         }
 
-        public delegate void OnCheckedEventHandler(bool isChecked);
+        public delegate void OnCheckedEventHandler(object sender, OnCheckedEventArgs args);
 
         /// <summary>
         /// Raises when <see cref="IsChecked"/> property changes.
