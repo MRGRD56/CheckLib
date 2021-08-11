@@ -1,14 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>MRGRD56</Authors>
     <Company>MRGRD56</Company>
     <PackageTags>library, collections, checkbox, radiobutton, C#, csharp</PackageTags>
-    <Version>1.0.3</Version>
+    <Version>1.1.0</Version>
     <RepositoryUrl>https://github.com/MRGRD56/CheckLib</RepositoryUrl>
     <PackageProjectUrl>https://github.com/MRGRD56/CheckLib</PackageProjectUrl>
+    <LangVersion>latest</LangVersion>
+    <TargetFrameworks>net48;net5.0;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <PackageVersion>1.2.0</PackageVersion>
   </PropertyGroup>
 
 </Project>

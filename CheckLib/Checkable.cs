@@ -1,15 +1,13 @@
-﻿using CheckLib.Additional;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CheckLib
 {
     /// <summary>
-    /// Represents an item you can check and uncheck. Can be used with checkboxes.
+    /// Represents an item can be checked and unchecked.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class Checkable<T> : NotifyPropertyChanged
+    public class Checkable<T> : INotifyPropertyChanged
     {
         private bool _isChecked;
 
@@ -23,7 +21,7 @@ namespace CheckLib
                 if (value == _isChecked) return;
                 _isChecked = value;
                 OnPropertyChanged();
-                OnChecked?.Invoke(this, new OnCheckedEventArgs(value));
+                Checked?.Invoke(this, new OnCheckedEventArgs(value));
             }
         }
 
@@ -32,18 +30,25 @@ namespace CheckLib
         /// <summary>
         /// Raises when <see cref="IsChecked"/> property changes.
         /// </summary>
-        public event OnCheckedEventHandler OnChecked;
+        public event OnCheckedEventHandler Checked;
 
         public Checkable() { }
 
-        public Checkable(T item, bool isChecked = false, OnCheckedEventHandler onChecked = null)
+        public Checkable(T item, bool isChecked = false, OnCheckedEventHandler @checked = null)
         {
             Item = item;
             IsChecked = isChecked;
-            if (onChecked != null)
+            if (@checked != null)
             {
-                OnChecked += onChecked;
+                Checked += @checked;
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
