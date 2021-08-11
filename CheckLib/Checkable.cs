@@ -21,26 +21,26 @@ namespace CheckLib
                 if (value == _isChecked) return;
                 _isChecked = value;
                 OnPropertyChanged();
-                Checked?.Invoke(this, new OnCheckedEventArgs(value));
+                Checked?.Invoke(this, new CheckedEventArgs(value));
             }
         }
 
-        public delegate void OnCheckedEventHandler(object sender, OnCheckedEventArgs args);
+        public delegate void CheckedEventHandler(object sender, CheckedEventArgs args);
 
         /// <summary>
         /// Raises when <see cref="IsChecked"/> property changes.
         /// </summary>
-        public event OnCheckedEventHandler Checked;
+        public event CheckedEventHandler Checked;
 
         public Checkable() { }
 
-        public Checkable(T item, bool isChecked = false, OnCheckedEventHandler @checked = null)
+        public Checkable(T item, bool isChecked = false, CheckedEventHandler onChecked = null)
         {
             Item = item;
             IsChecked = isChecked;
-            if (@checked != null)
+            if (onChecked != null)
             {
-                Checked += @checked;
+                Checked += onChecked;
             }
         }
 

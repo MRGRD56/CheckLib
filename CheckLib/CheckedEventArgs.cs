@@ -4,11 +4,11 @@ using System.Text;
 
 namespace CheckLib
 {
-    public class OnCheckedEventArgs : EventArgs
+    public class CheckedEventArgs : EventArgs
     {
         public bool IsChecked { get; set; }
 
-        public OnCheckedEventArgs(bool isChecked)
+        public CheckedEventArgs(bool isChecked)
         {
             IsChecked = isChecked;
         }
