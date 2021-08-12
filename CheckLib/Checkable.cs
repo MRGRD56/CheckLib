@@ -11,7 +11,7 @@ namespace CheckLib
     {
         private bool _isChecked;
 
-        public T Item { get; set; }
+        public T Item { get; }
 
         public bool IsChecked
         {
