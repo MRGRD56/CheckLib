@@ -25,6 +25,27 @@ namespace CheckLib
             }
         }
 
+        /// <summary>
+        /// Inverts IsChecked value.
+        /// </summary>
+        /// <returns>IsChecked value after the inverting.</returns>
+        public bool Check()
+        {
+            IsChecked = !IsChecked;
+            return IsChecked;
+        }
+
+        /// <summary>
+        /// Sets IsChecked value.
+        /// </summary>
+        /// <param name="isChecked"></param>
+        /// <returns>IsChecked value after the setting.</returns>
+        public bool Check(bool isChecked)
+        {
+            IsChecked = isChecked;
+            return IsChecked;
+        }
+
         public delegate void CheckedEventHandler(object sender, CheckedEventArgs args);
 
         /// <summary>
